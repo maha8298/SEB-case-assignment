@@ -16,7 +16,7 @@ function formValidation() {
     if (!email.match(emailRegex)) {
         errorMessages.push('E-post adress har inkorrekt format');
     }
-    else if (!email) {
+    if (!email) {
         errorMessages.push("E-post kan inte vara tomt")
     }
 
@@ -25,7 +25,7 @@ function formValidation() {
     if (!postalCode.match(postalRegex)) {
         errorMessages.push('Postnummer har inkorrekt format');
     }
-    else if (!postalCode) {
+    if (!postalCode) {
         errorMessages.push("Postnummer kan inte vara tomt")
     }
 
@@ -34,14 +34,13 @@ function formValidation() {
     if (parentName == firstName) {
         errorMessages.push('Namn på förälder kan inte vara samma som förnamn');
     }
-    else if (!parentName.match(parentNameRegex)) {
+    if (!parentName.match(parentNameRegex)) {
         errorMessages.push('Namn på förälder får bara innehålla bokstäver a-z');
     }
-    else if (!parentName) {
+    if (!parentName) {
         errorMessages.push("Namn på förälder kan inte vara tomt")
     }
 
-    // Display error messages
     if (errorMessages.length > 0) {
         showErrors(errorMessages);
         return false;
@@ -76,3 +75,17 @@ function buttonPress(event) {
 function goBack() {
     window.location.href = 'index.html';
 }
+
+// Popup window
+var popupLink = document.getElementById("popup-link");
+var popupWindow = document.getElementById("popup-window");
+var closeButton = document.getElementById("close-button");
+
+popupLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    popupWindow.style.display = "block";
+});
+
+closeButton.addEventListener("click", function () {
+    popupWindow.style.display = "none";
+});
