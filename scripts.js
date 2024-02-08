@@ -1,3 +1,4 @@
+// Function for validating the inputs made in the form
 function formValidation() {
     var firstName = document.getElementById('firstName').value;
     var email = document.getElementById('email').value;
@@ -41,6 +42,7 @@ function formValidation() {
         errorMessages.push("Namn på förälder kan inte vara tomt")
     }
 
+    // Print any error messages
     if (errorMessages.length > 0) {
         showErrors(errorMessages);
         return false;
@@ -50,6 +52,7 @@ function formValidation() {
 
 }
 
+// Displays error messages after validation of the form
 function showErrors(errors) {
     var errorContainer = document.createElement('div');
     errorContainer.className = 'error-message';
@@ -59,6 +62,7 @@ function showErrors(errors) {
     form.appendChild(errorContainer);
 }
 
+// Calls on when the submit button is pressed, validating the form and reverts to the next page
 function buttonPress(event) {
     event.preventDefault();
 
@@ -72,11 +76,12 @@ function buttonPress(event) {
     return false;
 }
 
+// Back button from page 2
 function goBack() {
     window.location.href = 'index.html';
 }
 
-// Popup window
+// Functionality for the popup window
 var popupLink = document.getElementById("popup-link");
 var popupWindow = document.getElementById("popup-window");
 var closeButton = document.getElementById("close-button");

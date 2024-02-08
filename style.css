@@ -114,9 +114,11 @@ button {
     align-self: flex-end;
 }
 
+/* Changes the size of the popup window on desktop screens*/
 @media screen and (min-width: 768px) {
     #popup-window {
         max-width: 400px;
         max-height: 200px;
         padding: 20px;
     }
+}
